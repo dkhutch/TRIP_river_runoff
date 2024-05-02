@@ -24,6 +24,12 @@ thresh = 0.1
 land = land_mask > thresh
 topo[~land] = 0
 
+# ------------------------------------------
+# DIRECTION KEY
+# 1-8 = directions - 1: N, 2: NE, 3: E, 4: SE, 5: S, 6: SW, 7: W, 8: NW
+# 9 = outflow point - when river hits this, flux gets passed to ocean
+# 10 = inland basin - when river reaches this, flow is passed to soil moisture
+# ------------------------------------------
 istep = np.array([0, 1, 1, 1, 0,-1,-1,-1])
 jstep = np.array([1, 1, 0,-1,-1,-1, 0, 1])
 directions = np.arange(1,9)
