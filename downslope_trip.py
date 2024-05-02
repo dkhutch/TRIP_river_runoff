@@ -66,7 +66,7 @@ for j in range(0,nlat-1):
                     jnew = jj
                     inew = ii
                     route[j1,i1] = directions[k]
-                    trip_steps[jj,ii] = max(count1, trip_steps[jj,ii])
+            trip_steps[jnew, inew] = max(count1, trip_steps[jnew, inew])
             j1 = jnew
             j1_halo = j1 + 1
             i1 = inew
