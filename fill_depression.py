@@ -18,8 +18,8 @@ nlat, nlon = topo.shape
 nx = 5
 nx2 = nx * 2
 
-topo_left = topo[:,-5:]
-topo_right = topo[:,:5]
+topo_left = topo[:,-nx:]
+topo_right = topo[:,:nx]
 
 topo_halo = np.concatenate((topo_left, topo, topo_right), axis=1)
 new_bottom = np.ones((1,nlon+nx2)) * 5000.
