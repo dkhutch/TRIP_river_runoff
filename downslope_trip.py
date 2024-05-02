@@ -3,8 +3,8 @@ import netCDF4 as nc
 import matplotlib.pyplot as plt
 
 topofile = 'topog_no_sink.nc'
-outfile = topofile[:-3] + '_basins.txt'
-figname = outfile[:-3] + 'png'
+outfile = 'river_save.nc'
+checkfig = 'counts.png'
 
 landfile = 'lsm_1x1.nc'
 
@@ -143,10 +143,10 @@ plt.pcolor(land_sinks)
 plt.colorbar()
 plt.title('Land sinks')
 
-plt.savefig('counts.png')
+plt.savefig(checkfig)
 
 
-f = nc.Dataset('river_save.nc', 'w')
+f = nc.Dataset(outfile, 'w')
 f.createDimension('lat', nlat)
 f.createDimension('lon', nlon)
 
