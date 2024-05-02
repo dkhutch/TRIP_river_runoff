@@ -35,7 +35,7 @@ jstep = np.array([1, 1, 0,-1,-1,-1, 0, 1])
 directions = np.arange(1,9)
 nstep = istep.shape[0]
 
-maxcount = 400
+maxcount = 200
 
 idest = np.zeros((nlat,nlon), 'i4')
 jdest = np.zeros((nlat,nlon), 'i4')
