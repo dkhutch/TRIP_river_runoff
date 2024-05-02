@@ -7,5 +7,5 @@ which creates an output of:
 `river_save.nc`
 
 In this file, the key outputs are:
-- **route** : specifies the direction variable field1906 (1-9), and 
+- **route** : specifies field1906, the direction variable (integer from 1-9) 
 - **trip_steps** : specifies field1905, the number of steps down the river.
