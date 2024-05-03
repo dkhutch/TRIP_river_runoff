@@ -11,10 +11,12 @@ lon = f.variables['lon'][:]
 topo = f.variables['topo'][:]
 f.close()
 
+# Here I raise the bottom row to encourage flow away from South Pole
 topo[0,:] = topo[0,:] + 500
 
 nlat, nlon = topo.shape
 
+# Create a halo to wrap around longitudes
 nx = 5
 nx2 = nx * 2
 
@@ -22,11 +24,15 @@ topo_left = topo[:,-nx:]
 topo_right = topo[:,:nx]
 
 topo_halo = np.concatenate((topo_left, topo, topo_right), axis=1)
+
+# Create a "bottom" halo of high elevation prevent outflow on South Pole
 new_bottom = np.ones((1,nlon+nx2)) * 5000.
 topo_halo = np.concatenate((new_bottom, topo_halo), axis=0)
 
 rtopo = rd.rdarray(topo_halo, no_data=-1.e10)
 rtopo_fill = rd.FillDepressions(rtopo, epsilon=True, in_place=False)
+
+# Remove halo points
 rtopo_out = rtopo_fill[1:,nx:-nx]
 
 f = nc.Dataset(outfile,'w')
