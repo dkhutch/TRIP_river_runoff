@@ -3,7 +3,7 @@ import netCDF4 as nc
 import matplotlib.pyplot as plt
 
 topofile = 'topog_no_sink.nc'
-outfile = 'river_save.nc'
+outfile = 'river_mio.nc'
 checkfig = 'counts.png'
 
 landfile = 'lsm_1x1.nc'
