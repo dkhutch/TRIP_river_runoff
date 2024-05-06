@@ -8,7 +8,7 @@ Scripts to generate TRIP river runoff from a new topography, for use in ACCESS-E
 This creates an output of:
 `river_mio.nc`
 
-In this file, the key outputs are:
+In this script, the key outputs are:
 - **route** : specifies field1906, the direction variable (integer from 1-9) 
 - **trip_steps** : specifies field1905, the number of steps down the river.
 
