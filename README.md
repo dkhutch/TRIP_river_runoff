@@ -1,8 +1,18 @@
 # TRIP_river_runoff
 
-Scripts to generate TRIP river runoff from a new topography, for use in ACCESS-ESM1.5 Miocene (15 Ma) configuration. The main scripts are:
+Scripts to generate TRIP river runoff from a new topography, for use in ACCESS-ESM1.5 Miocene (15 Ma) configuration. The main scripts, in order of running are:
+- `atmos_topog_trip.py`
+- `lsm_1x1.py`
 - `downslope_trip.py`
 - `update_rivers_restart.py`
+
+## atmos_topog_trip.py
+
+This interpolates the original 0.5 x 0.5 deg Miocene topography onto the 1x1 deg TRIP grid. 
+
+## lsm_1x1.py
+
+This remaps the land-sea mask from the ocean grid to the 1x1 deg TRIP grid. Since the ocean is the component that controls the definitive land-sea mask, it's better to use this to derive the LSM than the original Miocene input file.
 
 ## dowslope_trip.py
 This creates an output of:
